@@ -8,12 +8,50 @@
 
 
 // DOCUMENT READY FUNCTION BELOW
-$("#shoot").click(function()){
+function rps(inputs) {
     let choice = $("#input").val();
     $("#result").append(choice);
     let a = ["rock", "paper", "scissor"];
     let index = Math.floor(Math.random);
-    let compr = a[index];
+    let computer = a[index];
 
 
+    if (computer == inputs) {
+        return "It's a tie"
+    }
+
+    if (computer == "rock") {
+        if (inputs == "paper") {   
+            return "You win"
+        }
+    }
+    if (computer == "rock") {
+        if (inputs == "scissors") {
+            return "You lose"
+        }
+    }
+    if (computer == "paper") {
+        if (inputs == "rock") {
+            return "You lose"
+        }
+    }
+    if (computer == "paper") {
+        if (inputs == "scissors"){
+            return "You win"
+        }
+    }
+    if (computer == "rock") {
+        if (inputs == "paper") {
+            return "You win"
+        }
+    }
+    if (computer == "rock") {
+        if (inputs == "scissors") {
+            return "You lose"
+        }
+    }
+    
+
+
+$("#result").html(rps(input));
 }
